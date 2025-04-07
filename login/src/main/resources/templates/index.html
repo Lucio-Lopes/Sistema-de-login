@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bem-vindo!</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f3f4f6;
+      color: #333;
+    }
+
+    header {
+      background-color: #2563eb;
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 1.5rem;
+      font-weight: bold;
+    }
+
+    main {
+      padding: 2rem;
+    }
+
+    .welcome {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    button.logout {
+      background-color: #ef4444;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    button.logout:hover {
+      background-color: #dc2626;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div><strong>MinhaApp</strong></div>
+    <nav>
+      <a href="#">Início</a>
+      <a href="#">Perfil</a>
+      <a href="#">Configurações</a>
+      <button class="logout" onclick="logout()">Sair</button>
+    </nav>
+  </header>
+
+  <main>
+    <div class="welcome">Olá, <span th:text="${nome}"></span>! 👋</div>
+    <p>Você está logado com sucesso. Explore o conteúdo da aplicação!</p>
+  </main>
+
+  <script>
+    function logout() {
+      // Aqui você pode limpar o token de autenticação ou redirecionar
+      alert("Você foi deslogado.");
+      window.location.href = "sair"; // ou o que fizer sentido no seu app
+    }
+  </script>
+
+</body>
+</html>
